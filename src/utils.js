@@ -92,7 +92,7 @@ export function sanitizeState(state) {
     let result = {
         state: {
             on: state.power !== 'off',
-            bri: bright,
+            bri: Number(bright),
             colormode: colorModeMap[color_mode],
         },
         name,
