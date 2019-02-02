@@ -44,7 +44,11 @@ export default function YeeLightNodeState(RED) {
             node.serverConfig = RED.nodes.getNode(config.server);
 
             if (!node.serverConfig || !node.serverConfig.hostname) {
-                node.status({ fill: 'red', shape: 'ring', text: 'Hostname not set' });
+                node.status({
+                    fill: 'red',
+                    shape: 'ring',
+                    text: 'Hostname not set',
+                });
                 return;
             }
 

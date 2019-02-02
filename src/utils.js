@@ -79,7 +79,7 @@ export function colorTemperatureToRgbInt(ct) {
 }
 
 export function normalize(value, currentMax = 100, newMax = 255) {
-    return Math.round(parseInt(value, 10) / currentMax * newMax);
+    return Math.round((parseInt(value, 10) / currentMax) * newMax);
 }
 
 export function sanitizeState(state) {
@@ -92,7 +92,7 @@ export function sanitizeState(state) {
     let result = {
         state: {
             on: state.power !== 'off',
-            bri: normalize(bright),
+            bri: bright,
             colormode: colorModeMap[color_mode],
         },
         name,
